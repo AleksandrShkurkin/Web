@@ -1,0 +1,40 @@
+.commentList {
+    list-style-type: none;
+    padding: 0;
+    max-width: 400px;
+}
+
+.commentList li {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.commentList li strong {
+    color: #007bff;
+}
+
+.commentEnter {
+    opacity: 0;
+    transform: scale(0.1);
+}
+
+.commentEnterActive {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 300ms, transform 300ms;
+}
+
+.commentExit {
+    opacity: 1;
+}
+
+.commentExitActive {
+    opacity: 0;
+    transform: scale(0.1);
+    transition: opacity 300ms, transform 300ms;
+}
