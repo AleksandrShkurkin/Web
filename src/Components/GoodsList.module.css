@@ -1,0 +1,92 @@
+.goodsListContainer {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fdfdfd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.goodsList {
+    list-style: none;
+    padding: 0;
+}
+
+.goodsItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 0;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.goodsItem:last-child {
+    border-bottom: none;
+}
+
+.goodsInfo {
+    margin-bottom: 10px;
+}
+
+.goodsName {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007bff;
+    margin: 0;
+}
+
+.goodsDescription {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+}
+
+.goodsPrice {
+    font-size: 16px;
+    font-weight: bold;
+    color: #28a745;
+    margin: 0;
+}
+
+.noGoodsMessage {
+    font-size: 16px;
+    color: #888;
+    text-align: center;
+}
+
+.deleteButton {
+    padding: 5px 10px;
+    background-color: #e74c3c;
+    color: white;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+.deleteButton:hover {
+    background-color: #c0392b;
+}
+
+.commentsSection {
+    margin-top: 15px;
+    padding: 10px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.commentForm {
+    margin-top: 10px;
+}
