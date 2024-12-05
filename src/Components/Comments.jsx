@@ -1,18 +1,15 @@
 import React, { useState } from 'react';
 import styles from './Comments.module.css';
+import { Formik, Form, Field } from 'formik';
 
 const Comments = ({ itemId, addComment, comments }) => {
-    const [newComment, setNewComment] = useState('');
 
-    const handleCommentChange = (e) => {
-        setNewComment(e.target.value);
-    };
-
-    const handleCommentSubmit = (e) => {
-        e.preventDefault();
-        if (newComment.trim()) {
+    const handleCommentSubmit = (values, { setSubmitting, resetForm }) => {
+        const newComment = values.comment.trim()
+        if (newComment) {
             addComment(itemId, newComment);
-            setNewComment('');
+            resetForm();
+            setSubmitting(false);
         }
     };
 
@@ -25,17 +22,19 @@ const Comments = ({ itemId, addComment, comments }) => {
                     </li>
                 ))}
             </ul>
-            <form className={styles.commentForm} onSubmit={handleCommentSubmit}>
-                <textarea
-                    value={newComment}
-                    onChange={handleCommentChange}
-                    className={styles.commentInput}
-                    placeholder="Add a comment..."
-                />
-                <button type="submit" className={styles.commentSubmitButton}>
-                    Add Comment
-                </button>
-            </form>
+            <Formik 
+            initialValues={{comment: ''}}
+            onSubmit={handleCommentSubmit}>
+                <Form className={styles.commentForm} >
+                    <Field name="comment" type="textfield"
+                        className={styles.commentInput}
+                        placeholder="Add a comment..."
+                    />
+                    <button type="submit" className={styles.commentSubmitButton}>
+                        Add Comment
+                    </button>
+                </Form>
+            </Formik>
         </div>
     );
 };
